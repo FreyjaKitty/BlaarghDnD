@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,13 +10,13 @@
       font-family: 'Felipa';
       font-style: normal;
       font-weight: 400;
-      src: url('../fonts/felipa-v17-latin-regular.eot'); /* IE9 Compat Modes */
+      src: url('./fonts/felipa-v17-latin-regular.eot'); /* IE9 Compat Modes */
       src: local(''),
-          url('../fonts/felipa-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-          url('../fonts/felipa-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-          url('../fonts/felipa-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
-          url('../fonts/felipa-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-          url('../fonts/felipa-v17-latin-regular.svg#Felipa') format('svg'); /* Legacy iOS */
+          url('./fonts/felipa-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('./fonts/felipa-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+          url('./fonts/felipa-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+          url('./fonts/felipa-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+          url('./fonts/felipa-v17-latin-regular.svg#Felipa') format('svg'); /* Legacy iOS */
     }
     /* great-vibes-regular - latin */
     @font-face {
@@ -24,21 +25,24 @@
       font-weight: 400;
       src: url('../fonts/great-vibes-v9-latin-regular.eot'); /* IE9 Compat Modes */
       src: local(''),
-          url('../fonts/great-vibes-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-          url('../fonts/great-vibes-v9-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-          url('../fonts/great-vibes-v9-latin-regular.woff') format('woff'), /* Modern Browsers */
-          url('../fonts/great-vibes-v9-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-          url('../fonts/great-vibes-v9-latin-regular.svg#GreatVibes') format('svg'); /* Legacy iOS */
+          url('./fonts/great-vibes-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('./fonts/great-vibes-v9-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+          url('./fonts/great-vibes-v9-latin-regular.woff') format('woff'), /* Modern Browsers */
+          url('./fonts/great-vibes-v9-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+          url('./fonts/great-vibes-v9-latin-regular.svg#GreatVibes') format('svg'); /* Legacy iOS */
     }
 
     body {
       font-family: 'Felipa';
-      margin: 3em;
+      /*image licenced under https://wallpaperaccess.com/faq#personaluse */
+      background-image: url('./img/yup-its-wood.jpg');
     }
     .page-cover {
       color: rgb(182, 155, 0);
     }
 
+    
+    /*this is the stupid complicated bit for making show a box with some paper color and a wavy edge.*/
     :not(.page-cover .page-content).page-content::before {
       content: "";
       position: absolute;
@@ -49,7 +53,7 @@
       z-index: -1;
       box-shadow: 0px 0px 20px #000000, 0 0 60px #8a4d0f inset;   
       background: #fffef0;
-      filter: url(#wavy2);   
+      filter: url("#wavy");   
     }
 
     .page-cover::after {
@@ -65,87 +69,116 @@
       background: #331f00;
     }
 
-
-    .page-current
-    {
-      background-color: turquoise;
-    }
-
     .curly-fucking-writing
     {
       font-family:  'Great Vibes', 'Felipa';
-    }   
-    
+    }       
 
-    .page-content {
-      margin: 3em;
+    .page-content{
+      height: 100%;
+      margin: 0;      
+    }
+
+    .page-content-wrap {
+      padding: 3em;
+      font-size: 1.2em;
+      /* basically says, we want the next elements to be blocks that try to fit in a set of flexible size rows*/
+      display: flex;
+      flex-direction: column;
+
+      height: calc(100% - 5em);/*Urrgh, like, I cant get the thing to fit properly in its parent box, so its just, 'as tall but a bit less' now.*/
+    }
+
+    .page-header {
+
+    }
+
+    .page-text {
+      flex-grow: 1; /*this means make this one comperatively bigger compared to the otther grow settings, because its the only one it makes it as big as possible without breaking the flex layout.*/
+    }
+
+    .page-footer {
+      font-size: 1.4em;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    .flip-book {
+      margin: auto;
     }
   </style>
-  <svg>
-    <filter id="wavy1">
-      <feturbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="1"></feturbulence>
-      <feDisplacementMap in="SourceGraphic" scale="5" />
-    </filter>
-  </svg>
-  <svg>
-    <filter id="wavy2">
-      <feturbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="2"></feturbulence>
-      <feDisplacementMap in="SourceGraphic" scale="5" />
-    </filter>
-  </svg>
-  <svg>
-    <filter id="wavy3">
-      <feturbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="3"></feturbulence>
-      <feDisplacementMap in="SourceGraphic" scale="5" />
-    </filter>
-  </svg>
 </head>
-
 <body>
+
   <div class="flip-book" id="example">
     <div class="page page-cover page-cover-top" data-density="hard">
       <div class="page-content">
-        <h2>BOOK TITLE</h2>
+        <div class="page-content-wrap">
+        <h1 class="curly-fucking-writing">The Drunken Couriers</h1>
+        </div>
       </div>
     </div>
     <div class="page outer-page">
       <div class="page-content">
-        <h2 class="page-header">Page Header 1</h2>
+        <div class="page-content-wrap">
+        <h2 class="page-header">Dear reader</h2>
         <div class="page-image"></div>
-        <div class="page-text">Page Content 1</div>
-        <div class="page-footer">2</div>
+        <div class="page-text">If a <span style="text-decoration: line-through;">dog</span> wolf delivered this booklet to you, we are either in grave danger, or are done being in grave danger.
+          At any rate please mount a rescue or recovery, you can ask the wolf for directions.</br>
+        </br>
+          We will pay you in gold and trinkets.</br>
+        </br>
+          Thank you in advance. 
+          </div>
+        <div class="page-footer">Yvanna</div>
+        <div>
       </div>
     </div>
     <div class="page">
       <div class="page-content">
+        <div class="page-content-wrap">
         <h2 class="page-header">Page Header 2</h2>
         <div class="page-image"></div>
         <div class="page-text">Page Content 2</div>
         <div class="page-footer">3</div>
+        </div>
       </div>
     </div>
     <div class="page">
       <div class="page-content">
+        <div class="page-content-wrap">
         <h2 class="page-header">Page Header 2</h2>
         <div class="page-image"></div>
-        <div class="page-text">Page Content 2</div>
-        <div class="page-footer">3</div>
+        <div class="page-text">Page Content 2
+          <img src="./svg/SVG Logo.svg" width="100" height="100">
+          <div class="page-footer">3</div>
+        </div>
+        </div>
       </div>
     </div>
     <div class="page">
       <div class="page-content">
+        <div class="page-content-wrap">
         <h2 class="page-header">Page Header 3</h2>
         <div class="page-image"></div>
-        <div class="page-text">Page Content 3</div>
+        <div class="page-text">Page Content 3
+
+
+        </div>
         <div class="page-footer">3</div>
+        </div>
       </div>
     </div>
     <div class="page outer-page curly-fucking-writing">
+      
       <div class="page-content">
+        <div class="page-content-wrap">
         <h2 class="page-header">Page Header 4</h2>
         <div class="page-image"></div>
         <div class="page-text">Page Content 4</div>
         <div class="page-footer">3</div>
+        </div>
+
       </div>
     </div>
     <div class="page page-cover page-cover-bottom" data-density="hard">
@@ -165,11 +198,7 @@
 
         // width & height *(REQUIRED)
         width: 600,
-        height: 900,
-        minWidth: 660,
-          maxWidth: 660,
-          minHeight: 660,
-          maxHeight: 660,
+        height: 800,
 
         // draw book shadows
         drawShadow: true,
@@ -202,6 +231,11 @@
    // document.querySelector(".page-current").innerText = "wuh wuh, huge nerd";
 });
   </script>
+<svg>
+  <filter id="wavy">
+    <feturbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="2"></feturbulence>
+    <feDisplacementMap in="SourceGraphic" scale="5" />
+  </filter>
+</svg>
 </body>
-
 </html>
