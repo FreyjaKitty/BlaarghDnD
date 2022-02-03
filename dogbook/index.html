@@ -85,6 +85,19 @@
       background: #331f00;
     }
 
+    .flip-book::after {
+      content: "";
+      position: absolute;
+      visibility: visible;
+      left: 49.5%;
+      top: 0;
+      right: 49.5%;
+      bottom: 0;
+      z-index: -2;
+
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #331f00 20%, #331f00 50%, #331f00 70%, rgba(0, 0, 0, 0) 100%);
+    }
+
     .curly-fucking-writing {
       font-family: 'Great Vibes', 'Felipa';
     }
@@ -127,7 +140,7 @@
 
     .flip-book {
       margin: auto;
-      
+
     }
   </style>
 </head>
