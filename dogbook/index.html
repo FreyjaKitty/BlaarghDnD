@@ -212,7 +212,7 @@
 
 <body>
 
-  <div class="flip-book" id="example">
+  <div class="flip-book" id="dogbook">
     <div class="page page-cover page-cover-top" data-density="hard">
       <!--So we want to avoid touching the style of this directly because the flippy script touches it, so it might mess it up.-->
       <div class="page-content">
@@ -356,7 +356,7 @@
   <script>
     // Browser
     const pageFlip = new St.PageFlip(
-      document.getElementById("example"),
+      document.getElementById("dogbook"),
       {
 
         // start page index
@@ -373,7 +373,7 @@
         flippingTime: 1000,
 
         // allows to switch to portrait mode
-        usePortrait: true,
+        usePortrait: false,
 
         // z-index property
         startZIndex: 0,
