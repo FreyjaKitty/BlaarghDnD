@@ -19,8 +19,6 @@
         /* Super Modern Browsers */
         url('./fonts/felipa-v17-latin-regular.woff') format('woff'),
         /* Modern Browsers */
-        url('./fonts/felipa-v17-latin-regular.ttf') format('truetype'),
-        /* Safari, Android, iOS */
         url('./fonts/felipa-v17-latin-regular.svg#Felipa') format('svg');
       /* Legacy iOS */
     }
@@ -39,8 +37,6 @@
         /* Super Modern Browsers */
         url('./fonts/great-vibes-v9-latin-regular.woff') format('woff'),
         /* Modern Browsers */
-        url('./fonts/great-vibes-v9-latin-regular.ttf') format('truetype'),
-        /* Safari, Android, iOS */
         url('./fonts/great-vibes-v9-latin-regular.svg#GreatVibes') format('svg');
       /* Legacy iOS */
     }
@@ -55,9 +51,8 @@
     @font-face {
       font-family: 'Geraldine';
       src: local(''),
-      url('../fonts/GeraldinePersonalUseItalic-PK12m.ttf'),
-      url('../fonts/GERALDINEPERSONALUSE-Italic.woff2'),
-      url('../fonts/GERALDINEPERSONALUSE-Italic.woff');
+      url('../fonts/Geraldine-personal-use.woff'),
+      url('../fonts/Geraldine-personal-use.woff2');
     }
 
     /* covered-by-your-grace-regular - latin */
@@ -65,12 +60,11 @@
       font-family: 'Covered By Your Grace';
       font-style: normal;
       font-weight: 400;
-      src: url('../fonts/covered-by-your-grace-v13-latin-regular.eot'); /* IE9 Compat Modes */
+      src: url('../fonts/covered-by-your-grace-v13-latin-regular.woff') format('woff'); /* Modern Browsers */
       src: local(''),
           url('../fonts/covered-by-your-grace-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('../fonts/covered-by-your-grace-v13-latin-regular.eot'), /* IE9 Compat Modes */
           url('../fonts/covered-by-your-grace-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-          url('../fonts/covered-by-your-grace-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
-          url('../fonts/covered-by-your-grace-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
           url('../fonts/covered-by-your-grace-v13-latin-regular.svg#CoveredByYourGrace') format('svg'); /* Legacy iOS */
     }
 
@@ -79,22 +73,21 @@
       font-family: 'Homemade Apple';
       font-style: normal;
       font-weight: 400;
-      src: url('../fonts/homemade-apple-v16-latin-regular.eot');
-      /* IE9 Compat Modes */
+      src: url('../fonts/homemade-apple-v16-latin-regular.woff') format('woff');
+        /* Modern Browsers */
       src: local(''),
         url('../fonts/homemade-apple-v16-latin-regular.eot?#iefix') format('embedded-opentype'),
         /* IE6-IE8 */
         url('../fonts/homemade-apple-v16-latin-regular.woff2') format('woff2'),
         /* Super Modern Browsers */
-        url('../fonts/homemade-apple-v16-latin-regular.woff') format('woff'),
-        /* Modern Browsers */
-        url('../fonts/homemade-apple-v16-latin-regular.ttf') format('truetype'),
-        /* Safari, Android, iOS */
+        url('../fonts/homemade-apple-v16-latin-regular.eot'),
+      /* IE9 Compat Modes */
         url('../fonts/homemade-apple-v16-latin-regular.svg#HomemadeApple') format('svg');
       /* Legacy iOS */
     }
 
 
+    /* The dimensions of the book are 3:4 width/height. Totaling 4 inches by 5.33 inches, or 10.2cm by 13.6cm. */
     body {
       font-family: 'Felipa';
       /*image licenced under https://wallpaperaccess.com/faq#personaluse */
@@ -107,6 +100,11 @@
     .yvanna-wrote-this {
       font-family: 'Felipa';
       font-size: 1.48em;
+    }
+
+    .yvanna-wrote-fancy {
+      font-family: 'Geraldine';
+      font-size: 2.1em;
     }
 
     h1 {
@@ -284,7 +282,7 @@
             <!--Mostly this is to hold the 'flex layout' area. -->
             <h2 class="page-header">Title</h2>
             <div class="page-image"></div>
-            <div class="page-text">words.
+            <div class="yvanna-wrote-fancy">Fancy ass words.
               <img src="./svg/SVG Logo.svg" width="100" height="100">
             </div>
             <div class="page-footer">Footer</div>
